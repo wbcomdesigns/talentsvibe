@@ -1,0 +1,327 @@
+/*--------------------------------------------------------------
+This is your custom stylesheet.
+
+Add your own styles here to make theme updates easier.
+To override any styles from other stylesheets, simply copy them into here and edit away.
+
+Make sure to respect the media queries! Otherwise you may
+accidentally add desktop styles to the mobile layout.
+https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+--------------------------------------------------------------*/
+
+#acf-form .acf-fields>.acf-field{
+	padding:15px 0;
+	border:none;
+}
+
+.portfolio-form .acf-field {
+    padding: 0 0 30px;
+    border: none;
+}
+.portfolio-form .select2-container.-acf {
+    z-index: 9;
+}
+.portfolio-form .acf-field .acf-label label {
+    margin: 0;
+    line-height: 1;
+}
+.portfolio-form .wp-editor-wrap .wp-switch-editor.switch-html {
+    border-radius: 0;
+}
+span.select2-dropdown.select2-dropdown--below {
+    top: 32px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #333;
+    line-height: 37px;
+    margin: 0 10px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+    height: 40px;
+}
+
+.portfolio-form .select2-container.-acf .select2-selection--multiple .select2-selection__choice {
+    border-radius: 7px;
+}
+.portfolio-form input.select2-search__field {
+    height: auto;
+}
+.portfolio-form ul.select2-selection__rendered.ui-sortable {
+    padding: 0 15px !important;
+}
+.portfolio-form .acf-button-group label:first-child {
+    border-radius: 10px 0 0 10px;cursor: pointer;
+}
+.portfolio-form .acf-button-group label:last-child {
+    border-radius: 0 10px 10px 0;cursor: pointer;
+}
+.portfolio-form .acf-button-group label.selected {
+    border-color: #f15a24;
+    background: #f15a24;
+}
+
+.portfolio-form a.acf-button.button.button-primary.acf-gallery-add,
+.portfolio-form .hide-if-value a.acf-button.button {
+    background: #385dff;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    clear: both;
+    width: 160px;
+    line-height: 1;
+    margin-top: 3px;
+    color: #fff;
+    justify-content: center;
+}
+
+.portfolio-form div.acf-gallery.ui-resizable {
+    border: none;
+    height: 200px !important;
+}
+
+.portfolio-form .acf-gallery .acf-gallery .acf-gallery-main,
+.portfolio-form .acf-gallery .acf-gallery-toolbar,
+.portfolio-form .acf-gallery-attachments.ui-sortable {
+    border: none !important;
+    padding: 0 !important;    
+	background: transparent;
+}
+
+.acf-gallery-toolbar li.acf-fr {
+    display: none;
+}
+
+.portfolio-form .acf-gallery .acf-gallery-toolbar{
+   top: 0;
+    bottom: unset;
+}
+.portfolio-form .acf-gallery-attachments.ui-sortable {
+    top: 50px;
+    bottom: 0;
+}
+.portfolio-form .acf-field-gallery .acf-input {
+    border: 2px dashed #c3c4c7;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.portfolio-form .acf-gallery .acf-gallery-attachment .margin,
+.portfolio-form .acf-image-uploader .image-wrap img {
+    border-radius: 12px;
+}
+.portfolio-form .acf-form-submit input.acf-button.button.button-primary.button-large {
+    padding: 10px 40px;
+    font-size: 18px;
+}
+.portfolio-form .select2-container--default.select2-container--focus .select2-selection--multiple {
+    min-height: 42px;
+}
+.portfolio-form .categorychecklist-holder {
+    border: none;
+    max-height: max-content;
+    overflow: auto;
+}
+.portfolio-form .acf-field .acf-checkbox-list {
+    padding: 0;
+    column-count: 5;
+    border: none !important;
+}
+.acf-field.acf-field-66fd334ad2663[data-name="select_ride"] .acf-checkbox-list ul.children.acf-bl,
+.acf-field.acf-field-67039fc101ed9[data-name="select_categories"] .acf-checkbox-list li>label{
+    display: none !important;
+}
+.acf-field.acf-field-66fd334ad2663[data-name="select_ride"] ul.acf-checkbox-list li label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.portfolio-form .acf-field ul.acf-checkbox-list li {
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 30px;
+}
+.portfolio-form .acf-field ul.acf-checkbox-list li input[type=radio] {
+    width: 18px;
+    height: 18px;    
+}
+
+.acf-field.acf-field-67039fc101ed9[data-name="select_categories"] ul.acf-checkbox-list {
+    column-count: unset;
+}
+
+.acf-field.acf-field-67039fc101ed9[data-name="select_categories"] .acf-taxonomy-field .acf-checkbox-list ul.children label {
+    display: flex !important;
+    font-size: 17px;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.acf-field.acf-field-67039fc101ed9[data-name="select_categories"] ul.acf-checkbox-list li input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+}
+
+
+.portfolio-form .dropzone a.acf-button.button.button-primary.acf-gallery-add, 
+.portfolio-form .dropzone .hide-if-value a.acf-button.button{
+	display: block;
+    margin: auto;
+}
+
+.portfolio-form .dropzone.dropzone-file [data-uploader] .hide-if-value,
+.dropzone .acf-gallery-main>.acf-gallery-attachments{
+	padding: 20px 20px;
+    border: 2px dashed #c3c4c7;
+    border-radius: 10px;
+}
+
+.portfolio-form .dropzone .acf-gallery-attachments:focus, 
+.portfolio-form .dropzone [data-uploader=wp]:focus{
+	box-shadow: 0 3px 5px -1px rgb(33 33 33 / 16%);
+    border-radius: 10px;
+}
+
+.acf-field.acf-field-gallery.dropzone .acf-gallery-main>.acf-gallery-attachments{
+	position: relative;
+    border: none !important;
+    outline: none;
+    margin: 0px;
+    bottom: 0px;
+    padding: 0px;
+	box-shadow: none;
+	top:0px;
+}
+
+.acf-field.acf-field-gallery.dropzone .acf-gallery{
+	border:none;
+}
+
+.acf-field.acf-field-gallery.dropzone .acf-gallery .acf-gallery-toolbar .acf-hl li{
+	width:100%;
+	text-align:center;
+}
+
+.portfolio-form .acf-field.acf-field-gallery.dropzone div.acf-gallery.ui-resizable{
+	height: 300px !important;
+}
+
+.portfolio-form  .dropzone .acf-gallery-attachments .acf-dropzone-info{
+	padding-bottom: 20px;
+	justify-content: flex-end;
+}
+
+#acf-form .acf-fields .acf-field.dropzone-file,
+#acf-form .acf-fields .acf-field.dropzone,
+.dropzone .acf-gallery-attachments:not(:focus-within) .show-if-focus, 
+.dropzone [data-uploader=wp]:not(:focus-within) .show-if-focus{
+	display:block !important;
+}
+
+.acf-repeater .acf-row-handle.order{
+	display:none;
+}
+
+
+#acf-form .acf-table,
+#acf-form .acf-repeater .acf-row-handle.order+td{
+	border:none;
+	background: none;
+}
+
+#acf-form .acf-repeater .acf-row{
+	background: #f9f9f9 !important;
+    padding: 20px !important;
+    border-radius: 15px;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+#acf-form .acf-repeater .acf-row .acf-fields{
+    width: 100%;
+	display: block;
+}
+
+.acf-repeater .acf-row-handle.remove{
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+    width: 100%;
+    position: relative;
+    border: none !important;
+    background: none !important;
+}
+
+.acf-repeater .acf-row-handle.remove .acf-icon{
+    position: relative;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    font-size: 18px;
+	background: none;
+    border-radius: 0;
+    border: none;
+}
+
+.acf-icon.-small.-globe{
+	line-height:normal !important;
+}
+
+.acf-repeater .acf-row-handle.remove .acf-icon:before{
+	font-family: bb-icons;
+}
+
+.acf-repeater .acf-row-handle.remove .acf-icon.-plus:before{
+	content: '\eef9';
+}
+
+.acf-repeater .acf-row-handle.remove .acf-icon.-duplicate{
+	display:none !important;
+}
+
+.acf-repeater .acf-row-handle.remove .acf-icon.-duplicate:before{
+	content: '\ee3b';
+}
+
+.acf-repeater .acf-row-handle.remove br{
+	display:none;
+}
+
+.acf-repeater .acf-row-handle.remove .acf-icon.-plus:before,
+.acf-repeater .acf-row-handle.remove .acf-icon.-minus:before{
+    content: attr(title);
+    display: block;
+    margin: 0;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    font-size: 14px;
+    flex: 0 0 auto;
+    background: #385dff;
+    color: #fff;
+    border-radius: 8px;
+    padding: 5px 17px;
+    font-family: Niramit;
+    text-transform: capitalize;
+}
+
+.acf-repeater .acf-row-handle.remove .acf-icon.-minus:before{
+	background: #eb5151;
+}
+
+.acf-repeater.-block .acf-actions{
+	display:none;
+}
+
+
+
+
+
+
+
+
+
