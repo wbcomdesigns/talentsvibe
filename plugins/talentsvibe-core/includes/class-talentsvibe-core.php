@@ -56,6 +56,15 @@ class Talentsvibe_Core {
 	 * @var      string    $version    The current version of the plugin.
 	 */
 	protected $version;
+	
+	/**
+	 * The class managing GamiPress integration.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      Talentsvibe_Core_Gamipress    $gamipress    The GamiPress integration.
+	 */
+	protected $gamipress;
 
 	/**
 	 * Define the core functionality of the plugin.
@@ -78,6 +87,7 @@ class Talentsvibe_Core {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+		$this->define_gamipress_hooks();
 
 	}
 
@@ -121,6 +131,11 @@ class Talentsvibe_Core {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-talentsvibe-core-public.php';
+		
+		/**
+		 * The class responsible for GamiPress integration
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-talentsvibe-core-gamipress.php';
 
 		$this->loader = new Talentsvibe_Core_Loader();
 
@@ -175,6 +190,32 @@ class Talentsvibe_Core {
 		$this->loader->add_filter( 'bp_business_profile_single_menu_items', $plugin_public, 'wbcom_reorder_business_menu_items', 10, 2 );
 		$this->loader->add_filter( 'bp_business_profil_default_tab', $plugin_public, 'wbcom_set_about_as_default_tab' );		
 
+	}
+	
+	
+	/**
+	 * Register all of the hooks related to GamiPress integration
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 */
+	private function define_gamipress_hooks() {
+		// Only initialize if both plugins are active
+		if ( ! class_exists( 'BP_Verified_Member' ) || ! function_exists( 'gamipress' ) ) {
+			return;
+		}
+
+		$this->gamipress = new Talentsvibe_Core_Gamipress( $this->get_plugin_name(), $this->get_version() );
+
+		// Settings
+		$this->loader->add_action( 'admin_init', $this->gamipress, 'register_settings' );
+		
+		// Handle verification status changes
+		$this->loader->add_action( 'bp_verified_member_verified_status_updated', $this->gamipress, 'handle_verification_status', 10, 2 );
+		
+		// Add custom triggers
+		$this->loader->add_filter( 'gamipress_activity_triggers', $this->gamipress, 'add_gamipress_triggers' );
+		$this->loader->add_filter( 'gamipress_specific_activity_trigger_label', $this->gamipress, 'add_trigger_label', 10, 2 );
 	}
 
 	/**
