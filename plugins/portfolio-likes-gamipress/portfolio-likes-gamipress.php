@@ -445,7 +445,13 @@ class Wbcom_Portfolio_Likes_GamiPress {
     /**
      * GamiPress specific triggers
      */
-    public function wbcom_plg_gamipress_specific_triggers( $triggers, $trigger_type ) {
+    public function wbcom_plg_gamipress_specific_triggers( $triggers, $trigger_type = null ) {
+        // If trigger_type is not provided, check if $triggers is actually the trigger type
+        if ( $trigger_type === null && is_string( $triggers ) ) {
+            $trigger_type = $triggers;
+            $triggers = array();
+        }
+        
         if ( $trigger_type === 'wbcom_portfolio_get_x_likes' ) {
             $triggers['wbcom_portfolio_get_x_likes'] = __( 'Get a specific number of likes on portfolios', 'portfolio-likes' );
         }
